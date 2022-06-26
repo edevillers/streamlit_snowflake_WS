@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas
+import pandas as pd
 
 st.title("My Parents New Healthy Diner")
 
@@ -11,4 +11,6 @@ st.text("🥑🍞 Avocado Toast")
 
 st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-st.text('un test')
+my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+
+st.dataframe(my_fruit_list)
