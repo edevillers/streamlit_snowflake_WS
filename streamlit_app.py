@@ -24,3 +24,8 @@ st.dataframe(fruits_to_show)
 st.header("Fruityvice Fruit Advice !")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response.json())
+
+#  normalise le fruityvice
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+# et l'affiche come df
+st.dataframe(fruityvice_normalized)
