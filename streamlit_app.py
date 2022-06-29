@@ -35,6 +35,9 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # et l'affiche come df
 st.dataframe(fruityvice_normalized)
 
+# pour regarder une section à la fois
+st.stop()
+
 # essayer de se brancher à snowflake
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
